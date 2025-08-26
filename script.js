@@ -22,16 +22,17 @@ function createBoard (size) {
         console.log(size)
     for (let i = 0; i < sizeBoard; i++) {
         let divs = document.createElement("div");
-        let divOpacity = divs.style.opacity;
         divs.style.backgroundColor = "#ffffffff";
         divs.style.flex = '1';
+        divs.style.opacity = 0.1;
         divs.style.height = `calc(100% / ${size})`;
         divs.style.width = `calc(100% / ${size})`;
         divs.style.aspectRatio = '1 / 1'
-        divs.style.opacity = '0';
         divs.addEventListener("mouseover", ()=> {
         divs.style.backgroundColor = getRandomColor()
-        divs.style.opacity =Math.min(divOpacity + 0.1, 1)});
+        let current = parseFloat(divs.style.opacity);
+        let newOpacity = Math.min(current + 0.1, 1);
+        divs.style.opacity = newOpacity;})
         board.insertAdjacentElement("beforeend", divs);     
 }
 }}
