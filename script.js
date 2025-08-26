@@ -13,27 +13,28 @@ function getRandomColor() {
 let board = document.querySelector(".board")
 function createBoard (size) {
     
-    if (size > 50) {
-        alert("You can use more than 100px in this canvas!")
-    } else {
+    if (size > 100) {
+        alert("You can't use more than 100px in this canvas!");
+    }
+    else {
         console.log(board)
-        
         sizeBoard = size * size;
         console.log(size)
-        for (let i = 0; i < sizeBoard; i++) {
+    for (let i = 0; i < sizeBoard; i++) {
         let divs = document.createElement("div");
+        let divOpacity = divs.style.opacity;
         divs.style.backgroundColor = "#ffffffff";
         divs.style.flex = '1';
         divs.style.height = `calc(100% / ${size})`;
         divs.style.width = `calc(100% / ${size})`;
         divs.style.aspectRatio = '1 / 1'
+        divs.style.opacity = '0';
         divs.addEventListener("mouseover", ()=> {
-        divs.style.backgroundColor = getRandomColor()}            
-        );
+        divs.style.backgroundColor = getRandomColor()
+        divs.style.opacity =Math.min(divOpacity + 0.1, 1)});
         board.insertAdjacentElement("beforeend", divs);     
-    }
 }
-}
+}}
 createBoard(16);
 let renew = document.querySelector(".renew");
 renew.addEventListener("click", newBoard)

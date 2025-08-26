@@ -4,4 +4,44 @@ height: 500px;
 display: flex;
 flex-wrap: wrap;
 border: thick solid black;
+background-color: white;
+align-self: center;
+margin-top: 5%;
+border-style: outset;
+border-radius: 5px;
+}
+body {
+background-color: #2C2C2C;
+}
+.renew {
+margin: auto;
+width: auto;
+background-color: #e7e7e7; /* Green */
+border: none;
+color: black;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+align-self: center;
+border-style: outset;
+border-radius: 10px;
+}
+.container {
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto;
+justify-items: auto;
+flex-direction: column;
+width: 600px;
+margin-top: 5%;
+}
+.colorContainer {
+    padding: 5%;
+}
+.otherButtons {
+    padding: 10px;
+    margin: 0 5px 0;
 }
